@@ -1,6 +1,6 @@
-defmodule Charapter5 do
+defmodule Book.Charapter5 do
 
-  # -- Anonymous_function --
+  #   # Exercise: Functions-4 -- Anonymous_function --
   def ex_list_concat() do
     list_concat = fn(array_1, array_2) -> array_1 ++ array_2 end
     list_concat.([:a, :b],[:c, :d])
@@ -16,18 +16,7 @@ defmodule Charapter5 do
     pair_tuple_to_list.({:xa, :blau})
   end
 
-
-  # -- File_open example --
-  def handle_open() do
-    handle_open = fn
-      {:ok, file} -> "First line: #{IO.read(file, :line)}"
-      {_, error} -> "Error: #{:file.format_error(error)}"
-    end
-    IO.puts handle_open.(File.open("Rakefile"))
-    IO.puts handle_open.(File.open("nonexistent"))
-  end
-
-  # -- Pattern match --
+  # Exercise: Functions-2 -- Pattern match --
   def fizz_buzz(arg_1, arg_2, base) do
     ex_fn = fn
       (0, 0) -> "FizzBuzz"
@@ -44,12 +33,12 @@ defmodule Charapter5 do
   def fizz_buzz_pretty(0, _, _), do: "Fizz"
   def fizz_buzz_pretty(_, _, base), do: base
 
+  # Exercise: Functions-3 -- Pattern match --
   def call_rem_to_fizz_buzz(value) do
     fizz_buzz(rem(value, 3), rem(value, 5), value)
   end
 
   # Exercise: Functions-4 -- Function as argument --
-
   def anonymous_function_as_argument_concat_strings do
     prefix = fn (first_word) ->
       fn (second_word) ->
@@ -59,6 +48,17 @@ defmodule Charapter5 do
 
     mrs = prefix.("Mrs")
     mrs.("Smith")
+  end
+
+  # Exercise: Functions-5 -- & notation --
+  def enum_map_1234() do
+    # Enum.map [1,2,3,4], fn x -> x + 2 end
+    Enum.map [1,2,3,4], &(&1 + 2)
+  end
+
+  def enum_each_1234() do
+    # Enum.each [1,2,3,4], fn x -> IO.inspect x end
+    Enum.each [1,2,3,4], &(&1 |> IO.inspect)
   end
 
 end
