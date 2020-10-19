@@ -1,4 +1,4 @@
-defmodule Book.Charapter5 do
+defmodule Chapter5 do
 
   #   # Exercise: Functions-4 -- Anonymous_function --
   def ex_list_concat() do
