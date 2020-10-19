@@ -1,6 +1,6 @@
 defmodule Chapter5 do
 
-  #   # Exercise: Functions-4 -- Anonymous_function --
+  # Exercise: Functions-1
   def ex_list_concat() do
     list_concat = fn(array_1, array_2) -> array_1 ++ array_2 end
     list_concat.([:a, :b],[:c, :d])
@@ -16,7 +16,7 @@ defmodule Chapter5 do
     pair_tuple_to_list.({:xa, :blau})
   end
 
-  # Exercise: Functions-2 -- Pattern match --
+  # Exercise: Functions-2
   def fizz_buzz(arg_1, arg_2, base) do
     ex_fn = fn
       (0, 0) -> "FizzBuzz"
@@ -38,7 +38,7 @@ defmodule Chapter5 do
     fizz_buzz(rem(value, 3), rem(value, 5), value)
   end
 
-  # Exercise: Functions-4 -- Function as argument --
+  # Exercise: Functions-4
   def anonymous_function_as_argument_concat_strings do
     prefix = fn (first_word) ->
       fn (second_word) ->
@@ -50,7 +50,7 @@ defmodule Chapter5 do
     mrs.("Smith")
   end
 
-  # Exercise: Functions-5 -- & notation --
+  # Exercise: Functions-5
   def enum_map_1234() do
     # Enum.map [1,2,3,4], fn x -> x + 2 end
     Enum.map [1,2,3,4], &(&1 + 2)
