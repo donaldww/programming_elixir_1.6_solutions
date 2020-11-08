@@ -37,4 +37,11 @@ defmodule Chapter7 do
   defp gen_element_list(from, to, actual) when actual == to, do: [actual]
   defp gen_element_list(from, to, actual) when actual < to, do: [actual | gen_element_list(from, to, actual + 1)]
 
+  # ---
+  # Notes:
+  # Remember that List and Enum module, actually have a lot of methods that can help on the day by day
+  # Like:
+  #  List.flatten, List.foldl, List.foldr, List.replace_at, List.keyfind, List.keydelete, List.keyreplace,etc
+  #  Enum.map, Enum.flat_map, Enum.map_reduce, Enum.sum, etc
+  # ---
 end
